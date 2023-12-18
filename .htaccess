@@ -1,0 +1,12 @@
+Options -Indexes
+
+ErrorDocument 403 /template_php/403.php
+ErrorDocument 500 /template_php/500.php
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
